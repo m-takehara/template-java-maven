@@ -24,14 +24,14 @@ jobs:
               ignored+="! -name $i "
           done
           files=$(find $(pwd) -maxdepth 1 $ignored)
-          mkdir java_maven
-          cp -r $files ./java_maven
-          zip -r java_maven.zip ./java_maven;
-          openssl sha256 java_maven.zip | cut -d " " -f2 > java_maven.zip.sha256
+          mkdir kotlin_maven
+          cp -r $files ./kotlin_maven
+          zip -r kotlin_maven.zip ./kotlin_maven;
+          openssl sha256 kotlin_maven.zip | cut -d " " -f2 > kotlin_maven.zip.sha256
           version=$(jq -r ".version" metadata.json)
           hub release create -m "v$version" "v$version"
-          hub release edit -m "" -a java_maven.zip "v$version"
-          hub release edit -m "" -a java_maven.zip.sha256 "v$version"
+          hub release edit -m "" -a kotlin_maven.zip "v$version"
+          hub release edit -m "" -a kotlin_maven.zip.sha256 "v$version"
       - name: setup git
         run: |
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
