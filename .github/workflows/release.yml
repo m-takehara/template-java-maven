@@ -12,9 +12,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
+      GITHUB_USER: ${{ secrets.GITHUB_USER }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@latest
       - uses: geertvdc/setup-hub@master
 
       - name: package and releases
