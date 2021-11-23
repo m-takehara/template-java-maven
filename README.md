@@ -1,3 +1,3 @@
-# Template java maven
+# Template kotlin maven
 
-Java template for Gauge using maven as build tool
+Kotlin template for Gauge using maven as build tool
