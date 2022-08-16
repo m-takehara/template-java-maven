@@ -10,24 +10,24 @@
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
-            <version>0.7.15</version>
+            <version>0.9.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.21.0</version>
+            <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>1.6.0</version>
+            <version>1.7.10</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test</artifactId>
-            <version>1.6.0</version>
+            <version>1.7.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -62,12 +62,12 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>1.6.0</version>
+                <version>1.7.10</version>
                 <configuration>
                     <args>
                         <arg>-Xjsr305=strict</arg>
                     </args>
-                    <jvmTarget>11</jvmTarget>
+                    <jvmTarget>17</jvmTarget>
                 </configuration>
                 <executions>
                     <execution>
