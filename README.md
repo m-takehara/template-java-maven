@@ -24,5 +24,5 @@ screenshot (0.1.0)
 ## How to use
 
 ```
-$ gauge init https://github.com/m-takehara/template-kotlin-maven/archive/refs/tags/v0.0.5.zip
+$ gauge init https://github.com/m-takehara/template-kotlin-maven/releases/download/v0.0.3/kotlin_maven.zip
 ```
