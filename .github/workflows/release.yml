@@ -28,9 +28,10 @@ jobs:
           zip -r kotlin_maven.zip ./kotlin_maven;
           openssl sha256 kotlin_maven.zip | cut -d " " -f2 > kotlin_maven.zip.sha256
           version=$(jq -r ".version" metadata.json)
-          hub release create -m "v$version" "v$version"
-          hub release edit -m "" -a kotlin_maven.zip "v$version"
-          hub release edit -m "" -a kotlin_maven.zip.sha256 "v$version"
+          version=v$version
+          hub release create -m $version $version
+          hub release edit -m "" -a kotlin_maven.zip $version
+          hub release edit -m "" -a kotlin_maven.zip.sha256 $version
       - name: setup git
         run: |
           git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
