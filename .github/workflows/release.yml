@@ -4,9 +4,7 @@ on:
   push:
     branches: [master]
     paths-ignore:
-      - metadata.json
       - .github
-      - README.md
 
 jobs:
   release:
