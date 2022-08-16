@@ -2,7 +2,7 @@ name: release
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
     paths-ignore:
       - metadata.json
       - .github
@@ -12,12 +12,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      GITHUB_USER: ${{ secrets.GITHUB_USER }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - uses: actions/checkout@v2
-      - uses: geertvdc/setup-hub@master
 
       - name: package and releases
         run: |
@@ -46,4 +43,4 @@ jobs:
           cat new_metadata.json > metadata.json
           git add metadata.json
           git commit -m "Bumped version to $version"
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" master   
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" master
